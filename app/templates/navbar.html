@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav style="overflow: hidden; background-image: url(https://jooinn.com/images/abstract-background-305.jpg" class="navbar navbar-expand-lg ">
   <a class="navbar-brand" href="/">Personal Blog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,9 @@
       {% else %}
       <li class="nav-item">
         <a class="nav-link" href="{{url_for('main.profile',uname=current_user.username)}}">My Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('main.addpost') }}">Add</a>
       </li>
 
       <li class="nav-item">

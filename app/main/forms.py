@@ -11,11 +11,14 @@ class CategoryForm(FlaskForm):
     submit = SubmitField('Create')
 
 
-class PitchForm(FlaskForm):
+class PostForm(FlaskForm):
     """
     class to create form to write pitch
     """
-    pitch = StringField('Pitch Content', validators=[Required()])
+    title = StringField('Blog title', validators=[Required()])
+    subtitle = StringField('Blog subtitle', validators=[Required()])
+    pitch = StringField('Blog Content', validators=[Required()])
+
     submit = SubmitField('Submit')
 
 
@@ -24,4 +27,9 @@ class CommentForm(FlaskForm):
     class to create form to comment on a pitch
     """
     comment = StringField('Comment Content', validators=[Required()])
+    submit = SubmitField('Submit')
+
+
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us more about you...')
     submit = SubmitField('Submit')
