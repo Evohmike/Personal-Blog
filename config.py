@@ -14,7 +14,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_MAROON_URL")
 
 
 class TestConfig(Config):
@@ -24,7 +24,7 @@ class TestConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://evohmike:1234@localhost/blog'
+    #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://evohmike:1234@localhost/blog'
     pass
 
 class DevConfig(Config):
@@ -34,11 +34,11 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
      '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://evohmike:1234@localhost/blog'
+    #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://evohmike:1234@localhost/blog'
 
     DEBUG = True
 
 config_options = {
-'development':DevConfig,
+#'development':DevConfig,
 'production':ProdConfig
 }
