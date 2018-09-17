@@ -42,4 +42,5 @@ No known errors if found drop a message on my profile
 Reach me via my email evohmike@gmail.com for any comments, reviews or advice.
 
 ### License
-Copyright (c) **Evoh mike**
+Copyright (c) [Evoh Mike](https://github.com/Evohmike/Personal-Blog/blob/master/LICENSE)
+ 
