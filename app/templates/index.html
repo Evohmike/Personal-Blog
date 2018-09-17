@@ -1,9 +1,6 @@
-
-
-{% extends 'base.html' %} 
-{% import 'bootstrap/wtf.html' as wtf %} 
-
-{% block content %}
+ {% extends 'base.html' %} 
+ {% import 'bootstrap/wtf.html' as wtf %} 
+ {% block content %}
 <title> {{ title }} </title>
 
 <div class="container">
@@ -13,5 +10,9 @@
     <h1>HOME PAGE</h1>
 </div>
 
-
-{% endblock %}
+{%- for post in blogposts %}
+<div class="jumbotron container">
+    <h3><a href="/posts/{{ post.id }}">{{ post.title }}</a></h3>
+    <p>{{ post.content }}</p>
+</div>
+{%- endfor %} {% endblock %}

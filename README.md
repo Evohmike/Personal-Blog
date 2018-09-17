@@ -1,11 +1,10 @@
 # Personal_Blog
-Flask application that will help list and preview news articles from various sources.
+Personal blog is an  application that alllows users to post blogs of their choice and are also able to comment on them.
 
 #### By **[Evoh Mike](https://github.com/Evohmike)**
 
 ## Description
-The Application enables users to view news highlights from popular news outlets around the world
-
+Flask apllication where users posts and comments on their blogs
 
 ## Specifications
 | Behavior      | Input             | Output            | 
@@ -26,8 +25,7 @@ The Application enables users to view news highlights from popular news outlets 
   - Run ./start.py
 
 ## Link to deployed site
-https://newshighlightwesh.herokuapp.com/
-
+https://evohmikesblog.herokuapp.com/
 
 ## Known bugs
 No known errors if found drop a message on my profile

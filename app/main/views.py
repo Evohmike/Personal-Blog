@@ -1,4 +1,4 @@
-from flask import render_template,redirect,url_for,abort,request
+from flask import render_template,redirect,url_for,abort,request,flash
 from . import main
 from flask_login import login_required,current_user
 from ..models import User,Blogpost
@@ -16,7 +16,11 @@ def index():
 
 
     title = "Welcome | Personal-Blog"
-    return render_template('index.html',title=title)
+    return render_template('index.html',title=title,
+        blogposts=Blogpost.query.all()
+    )
+
+
 
 @main.route('/user/<uname>')
 def profile(uname):
@@ -83,6 +87,9 @@ def addpost():
 
         db.session.add(post)
         db.session.commit()
+
+        flash("Posted!")
+        return redirect(url_for('.index'))
 
     return render_template('post.html',form=form)
 
