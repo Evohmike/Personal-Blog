@@ -4,29 +4,40 @@ class Config:
     '''
     General configuration parent class
     '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://evohmike:1234@localhost/blog'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.environ.get('SECRET_KEY')
-
 
 class ProdConfig(Config):
     '''
-    Production  configuration child class
+    Pruduction configuration child class
 
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    pass
+    SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_MAROON_URL")
 
+
+class TestConfig(Config):
+    '''
+    Testing configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://evohmike:1234@localhost/pitches'
+    pass
 
 class DevConfig(Config):
     '''
-    Development  configuration child class
+    Development configuration child class
 
     Args:
         Config: The parent configuration class with General configuration settings
-    '''
+     '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://evohmike:1234@localhost/pitches'
 
     DEBUG = True
-
 
 config_options = {
 'development':DevConfig,
